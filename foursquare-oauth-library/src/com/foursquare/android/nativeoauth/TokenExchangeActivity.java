@@ -127,8 +127,7 @@ public final class TokenExchangeActivity extends Activity {
     private void onTokenComplete(AccessTokenResponse response) {
         Intent data = new Intent();
         data.putExtra(INTENT_RESULT_RESPONSE, response);
-        
-        setResult(RESULT_OK, data);
+        setResult(Activity.RESULT_OK, data);
         finish();
     }
     
