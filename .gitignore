@@ -22,3 +22,6 @@ target
 # others
 .DS_Store
 tmp
+foursquare-oauth-library/build
+foursquare-oauth-sample/build
+.gradle
