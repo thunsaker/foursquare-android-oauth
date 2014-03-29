@@ -29,17 +29,6 @@ then locate the directory of the `foursquare-android-oauth` folder. From the Imp
 2. Open your project's properties page, select `Android` on the left panel.
 3. Under the `library` section, select `Add -> fsq-oauth-library -> OK`.
 
-or
-
-If you use Maven to build your Android project, you can simply add this dependency to the `pom.xml` file
-```xml
-<dependency>
-    <groupId>com.foursquare</groupId>
-    <artifactId>foursquare-android-nativeoauth-lib</artifactId>
-    <version>1.0.0</version>
-</dependency>
-```
-
 Using FoursquareOAuth
 =============
 #### Obtaining an access code
@@ -73,8 +62,11 @@ The `AuthCodeResponse` object has two members:
     * `FoursquareOAuthException` - An error occurred in the OAuth process. Call `FoursquareOAuthException.getErrorCode()` to obtain one of the error codes listed at http://tools.ietf.org/html/rfc6749#section-5.2
     * `FoursquareInternalErrorException` - An internal error occurred during authorization. Call `exception.getCause()` to inspect the original cause of the exception.
 
-#### Obtaining an access token
-*WARNING:* For security reasons, it is recommended that you not use the following method if possible. You should pass the returned access code to your own server and have it contact the Foursquare server to [convert the code to an access token](https://developer.foursquare.com/overview/auth#code) instead of including your client secret in your app's binary. However, this helper method is provided for you to use if this is not possible for your app.
+#### Obtaining an access token (server-side, recommended)
+You should pass the returned access code to your own server and have it contact Foursquare's servers to convert the code to an access token. This is shown in [step 3 in our code flow docs](https://developer.foursquare.com/overview/auth#code), but note that when making the request to `/oauth2/access_token`, you should omit the `redirect_uri` parameter. We recommend conducting the exchange for an access token on the server to avoid including your client secret in your app's binary.
+
+#### Obtaining an access token (client-side)
+*WARNING:* For security reasons, it is recommended that you not use the following method if possible. However, this helper method is provided for you to use if this is not possible for your app.
 
 Add the `TokenExchangeActivity` to your `AndroidManifest.xml`
 ```xml
