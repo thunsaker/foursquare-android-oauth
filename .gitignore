@@ -25,3 +25,5 @@ tmp
 foursquare-oauth-library/build
 foursquare-oauth-sample/build
 .gradle
+
+install.md

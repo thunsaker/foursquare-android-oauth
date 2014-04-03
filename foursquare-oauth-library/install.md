@@ -1,0 +1,1 @@
+mvn install:install-file -Dfile=foursquare-oauth-library-1.0.2-SNAPSHOT.aar -DgroupId=com.foursquare -DartifactId=foursquare-oauth-library -Dversion=1.0.2-SNAPSHOT -Dpackaging=aar

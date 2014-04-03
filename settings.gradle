@@ -1,2 +1,4 @@
 include ':foursquare-oauth-library'
 include ':foursquare-oauth-sample'
+
+rootProject.name = 'foursquare-oauth-library-aar'
