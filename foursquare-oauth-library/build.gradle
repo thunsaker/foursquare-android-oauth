@@ -12,8 +12,8 @@ buildscript {
 }
 
 android {
-    compileSdkVersion 17
-    buildToolsVersion "21.1.1"
+    compileSdkVersion 21
+    buildToolsVersion "21.1.2"
 
     sourceSets {
         main {
@@ -49,6 +49,7 @@ signing {
     sign configurations.archives
 }
 
+/*
 uploadArchives {
     repositories {
         mavenDeployer {
@@ -118,3 +119,4 @@ uploadArchives {
         }
     }
 }
+*/
