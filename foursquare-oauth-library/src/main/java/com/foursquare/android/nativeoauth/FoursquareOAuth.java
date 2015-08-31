@@ -32,6 +32,7 @@ import com.foursquare.android.nativeoauth.model.AuthCodeResponse;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.util.List;
+import java.util.Locale;
 
 /**
  * Main implementation of Foursquare authentication.
@@ -256,7 +257,7 @@ public final class FoursquareOAuth {
                         hexString.append(appendString);
                     }
         
-                    String signature = hexString.toString().toUpperCase(); 
+                    String signature = hexString.toString().toUpperCase(Locale.getDefault());
                     return signature;
         
                 } catch (NoSuchAlgorithmException e) {
